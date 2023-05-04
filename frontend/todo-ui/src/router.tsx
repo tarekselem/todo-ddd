@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "@core/layouts";
-import { HomePage, ErrorPage } from "./pages";
+import { TodosModule } from "@modules/todos";
+import { ErrorPage } from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -10,7 +11,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <HomePage />,
+        element: <TodosModule />,
       },
     ],
   },
