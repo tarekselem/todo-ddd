@@ -1,12 +1,10 @@
-export enum DueDateOptions {
+const enum DueDateOptions {
   NO_DUE_DATE = "",
   TODAY = "today",
   TOMORROW = "tomorrow",
   NEXT_WEEK = "next-week",
   NEXT_MONTH = "next-month",
 }
-
-export type DueDateOption = { key: DueDateOptions; value: string };
 
 export const getDueDate = (dueOption: DueDateOptions): Date | undefined => {
   const CURRENT_DATE = new Date();
@@ -28,12 +26,12 @@ export const getDueDate = (dueOption: DueDateOptions): Date | undefined => {
   }
 };
 
-export const DEFAULT_OPTION: DueDateOption = {
+export const DEFAULT_OPTION: Readonly<DueDateOption> = {
   key: DueDateOptions.NO_DUE_DATE,
   value: "No due date",
 };
 
-export const getDueDateOptionsList = (): DueDateOption[] => [
+export const DUE_DATE_OPTIONS: ReadonlyArray<DueDateOption> = [
   DEFAULT_OPTION,
   { key: DueDateOptions.TODAY, value: "Today" },
   { key: DueDateOptions.TOMORROW, value: "Tomorrow" },
