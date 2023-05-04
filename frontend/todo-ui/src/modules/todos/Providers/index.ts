@@ -1,5 +1,5 @@
 import { TodosApiRepository } from "../data";
-import { ITodosRepository } from "../domain/repositories";
+import { ITodosRepository } from "../application/repositories";
 
 const todosRepository: ITodosRepository = new TodosApiRepository();
 const API_ENDPOINT: string = "/todos";

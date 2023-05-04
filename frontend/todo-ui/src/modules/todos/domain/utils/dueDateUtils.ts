@@ -1,10 +1,4 @@
-const enum DueDateOptions {
-  NO_DUE_DATE = "",
-  TODAY = "today",
-  TOMORROW = "tomorrow",
-  NEXT_WEEK = "next-week",
-  NEXT_MONTH = "next-month",
-}
+import { DueDateOptions } from "../enums";
 
 export const getDueDate = (dueOption: DueDateOptions): Date | undefined => {
   const CURRENT_DATE = new Date();

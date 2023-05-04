@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { ApiBaseRepository } from "@core/repositories";
-import { ITodosRepository } from "@modules/todos/domain/repositories";
-import { TodoDTO } from "./dtos";
+import { ITodosRepository } from "../application/repositories";
+import { TodoDTO } from "../domain/dtos";
 import { API_ENDPOINT } from "../Providers";
 
 export class TodosApiRepository

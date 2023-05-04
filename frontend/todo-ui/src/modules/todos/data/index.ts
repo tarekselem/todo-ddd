@@ -1,1 +1,1 @@
-export * from "./todosApiRepository";
+export * from "./apiRepository";
