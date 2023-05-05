@@ -13,13 +13,13 @@ namespace Todos.Api.Controllers
         {
             this._todosList = new List<TodoDTO>{
 
-            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874931"), Description="Finish XYZ", DueDate= new DateOnly()},
-            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874932"), Description="Finish XYZ", DueDate= new DateOnly(), IsOverdue= true},
+            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874931"), Description="Hi test ftedfkm XYZ", DueDate= DateTime.Today},
+            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874932"), Description="Finish XYZ", DueDate= DateTime.Today, IsOverdue= true},
             new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874933"), Description="Learn ZYZ", IsCompleted=true},
-            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874934"), Description="Finish XYZ", DueDate= new DateOnly()},
-            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874935"), Description="Finish XYZ", DueDate= new DateOnly()},
-            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874936"), Description="Finish XYZ", DueDate= new DateOnly()},
-            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874937"), Description="Finish XYZ", DueDate= new DateOnly()},
+            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874934"), Description="Finish XYZ", DueDate= DateTime.Today},
+            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874935"), Description="Finish XYZ", DueDate= DateTime.Today},
+            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874936"), Description="Finish XYZ", DueDate= DateTime.Today},
+            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874937"), Description="Finish XYZ", DueDate= DateTime.Today},
 
 };
         }
