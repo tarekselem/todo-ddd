@@ -9,7 +9,9 @@ export abstract class ApiBaseRepository<TEntity> {
   }
 
   getAll = (configs?: AxiosRequestConfig) =>
-    apiClient.get<TEntity[]>(this.endpoint, configs);
+    apiClient
+      .get<ReadonlyArray<TEntity>>(this.endpoint, configs)
+      .then((res) => res.data);
 
   get = (id: string | number, configs?: AxiosRequestConfig) =>
     apiClient
