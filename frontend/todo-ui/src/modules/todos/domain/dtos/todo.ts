@@ -3,4 +3,5 @@ export interface TodoDTO {
   name: string;
   dueDateTime: string;
   isCompleted: boolean;
+  isOverdue: boolean;
 }

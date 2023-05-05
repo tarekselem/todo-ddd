@@ -14,11 +14,11 @@ export class TodosApiRepository
     super(API_ENDPOINT);
   }
 
-  getTodos(filters: unknown): Promise<Todo[]> {
+  getTodos(filter: unknown): Promise<Todo[]> {
     const mapper = new TodoMapper();
-    return this.getAll({ params: filters }).then((data) =>
-      mapper.collectionToDomain(data)
-    );
+    return super
+      .getAll({ params: filter })
+      .then((data) => mapper.collectionToDomain(data));
   }
 
   addTodo(newTodo: unknown): void {
