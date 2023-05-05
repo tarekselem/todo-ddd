@@ -8,13 +8,20 @@ import {
 } from "@chakra-ui/react";
 import { FcTodoList } from "react-icons/fc";
 import DueDateSelector from "./components/DueDateSelector";
+import useAddTodo from "../useAddTodo";
 
 export const AddTodo = () => {
-  const todoNameRef = useRef<HTMLInputElement>(null);
+  const descriptionRef = useRef<HTMLInputElement>(null);
+
+  const addTodo = useAddTodo(() => {
+    if (descriptionRef.current) descriptionRef.current.value = "";
+  });
 
   const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    if (todoNameRef.current) {
+
+    if (descriptionRef.current) {
+      addTodo.mutate({ description: descriptionRef.current.value });
     }
   };
 
@@ -25,10 +32,12 @@ export const AddTodo = () => {
           <InputGroup>
             <InputLeftElement children={<FcTodoList />} />
             <Input
-              ref={todoNameRef}
+              ref={descriptionRef}
               borderRadius={20}
               placeholder="What needs to be done?"
               variant="filled"
+              minLength={10}
+              isRequired
             />
           </InputGroup>
 

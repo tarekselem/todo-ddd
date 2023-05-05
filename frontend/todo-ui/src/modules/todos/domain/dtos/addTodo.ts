@@ -1,4 +1,5 @@
 export interface AddTodoDto {
-  name: string;
-  dueTime: string;
+  description: string;
+  dueTime?: string;
+  isCompleted: boolean;
 }

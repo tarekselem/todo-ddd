@@ -19,4 +19,10 @@ export class ApiBaseRepository<TEntity> {
       .get<TEntity>(`${this.endpoint}/${id}`, configs)
       .then((res) => res.data);
   }
+
+  post<TData>(data: TData, configs?: AxiosRequestConfig) {
+    return apiClient
+      .post<TEntity>(this.endpoint, data, configs)
+      .then((res) => res.data);
+  }
 }
