@@ -1,8 +1,8 @@
 import ms from "ms";
 import { useQuery } from "@tanstack/react-query";
 import { shallow } from "zustand/shallow";
-import { todosRepository } from "../../../Providers";
 import { Todo, useQueryFiltersStore } from "@modules/todos/application";
+import { todosRepository } from "@modules/todos/Providers";
 import { CACHE_KEY } from "./constants";
 
 const useListTodos = () => {

@@ -13,7 +13,7 @@ import useListTodos from "../useListTodos";
 export const ListTodos = () => {
   const { data, isLoading, error } = useListTodos();
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <Spinner size="lg" marginTop={100} />;
 
   if (error || !data) throw error;
 

@@ -1,5 +1,6 @@
 import { Flex } from "@chakra-ui/react";
-import { ListTodos, AddTodo } from "./useCases";
+import { ListTodos } from "./ListTodos";
+import { AddTodo } from "./AddTodo";
 
 export const TodosContainer = () => {
   return (
