@@ -3,7 +3,7 @@ import { ListTodos, AddTodo } from "./useCases";
 
 export const TodosContainer = () => {
   return (
-    <Flex direction="column" alignItems="center" gap={10}>
+    <Flex direction="column" alignItems="center">
       <AddTodo />
       <ListTodos />
     </Flex>

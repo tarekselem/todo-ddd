@@ -1,6 +1,6 @@
 export interface TodoDTO {
   id: string;
-  name: string;
+  description: string;
   dueDateTime: string;
   isCompleted: boolean;
   isOverdue: boolean;

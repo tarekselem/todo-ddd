@@ -1,20 +1,24 @@
 import { Box, Flex, Td, Tr } from "@chakra-ui/react";
+import { Todo } from "@modules/todos/application";
 import { MdDoneAll } from "react-icons/md";
 import StrickedTextCell from "./StrickedTextCell";
 
-export const CompeletedTaskRow = () => {
+interface Props {
+  data: Todo;
+}
+export const CompeletedTaskRow = ({ data }: Props) => {
   return (
     <Tr>
       <Td textAlign="start" paddingX={2}>
         <Flex paddingLeft={3} gap={3}>
           <MdDoneAll color="green" />
-          <StrickedTextCell>Learn German</StrickedTextCell>
+          <StrickedTextCell>{data.description}</StrickedTextCell>
         </Flex>
       </Td>
 
       <Td textAlign="center">
         <Box marginRight={8}>
-          <StrickedTextCell>Thursday, 4 May 2023</StrickedTextCell>
+          <StrickedTextCell>{data.dueDateTime}</StrickedTextCell>
         </Box>
       </Td>
 
