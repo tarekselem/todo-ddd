@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.Application", "..\Tod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.Infrastructure", "..\Todos.Infrastructure\Todos.Infrastructure.csproj", "{1571E8C9-F0A0-4339-B042-8DDB40F561D5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Host", "Host", "{A7C7DC49-6C18-45CF-8C1A-88314FA02A53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{843F6D1A-CE70-4711-8DCD-3DE0A14AAA8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{DC693DBF-0E31-4C2A-9EBA-5BDFB3DB7B9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,5 +45,11 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E94489E8-AA96-49C6-91CF-CD7691C6270E}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FBE154C4-56C0-4EB9-95B3-7BC301F8D21B} = {843F6D1A-CE70-4711-8DCD-3DE0A14AAA8F}
+		{F8B5F5CA-AEC3-42F2-B33A-73294EE21AED} = {843F6D1A-CE70-4711-8DCD-3DE0A14AAA8F}
+		{22A9B368-BBF6-4D1F-A148-4B0AE6640E1A} = {A7C7DC49-6C18-45CF-8C1A-88314FA02A53}
+		{1571E8C9-F0A0-4339-B042-8DDB40F561D5} = {DC693DBF-0E31-4C2A-9EBA-5BDFB3DB7B9C}
 	EndGlobalSection
 EndGlobal

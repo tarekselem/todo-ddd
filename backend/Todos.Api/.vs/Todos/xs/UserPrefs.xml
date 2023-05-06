@@ -1,24 +1,48 @@
 ﻿<Properties StartupConfiguration="{22A9B368-BBF6-4D1F-A148-4B0AE6640E1A}|https">
-  <MonoDevelop.Ide.ItemProperties.Todos.Domain FirstBuild="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../Todos.Domain/Entitties/Todo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Todos.Infrastructure/Persistence/JsonAdapter.cs">
     <Files>
-      <File FileName="Controllers/TodosController.cs" Line="18" Column="124" />
-      <File FileName="Controllers/WeatherForecastController.cs" />
-      <File FileName="../Todos.Domain/Class1.cs" Line="5" Column="18" />
-      <File FileName="TodoDTO.cs" Line="12" Column="52" />
+      <File FileName="Controllers/TodosController.cs" />
+      <File FileName="TodoDTO.cs" />
+      <File FileName="../Todos.Domain/Entitties/Todo.cs" Line="11" Column="54" />
+      <File FileName="../Todos.Application/Repositories/ITodosRepository.cs" />
+      <File FileName="../Todos.Application/Managers/TodosManager.cs" />
+      <File FileName="../Todos.Domain/Entitties/BaseEntity.cs" Line="6" Column="45" />
+      <File FileName="Core.config" Line="4" Column="1" />
+      <File FileName="../Todos.Application/Common/IDBContext.cs" Line="6" Column="29" />
+      <File FileName="../Todos.Infrastructure/Persistence/DBContext.cs" Line="13" Column="19" />
+      <File FileName="../Todos.Application/Models/Todo.cs" Line="10" Column="47" />
+      <File FileName="../Todos.Infrastructure/Persistence/JsonAdapter.cs" Line="7" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Todos" expanded="True" selected="True" />
+          <Node name="Todos" expanded="True">
+            <Node name="Core" expanded="True">
+              <Node name="Todos.Application" expanded="True">
+                <Node name="Common" expanded="True" />
+                <Node name="Models" expanded="True" />
+                <Node name="Repositories" expanded="True" />
+              </Node>
+              <Node name="Todos.Domain" expanded="True">
+                <Node name="Entitties" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Infra" expanded="True">
+              <Node name="Todos.Infrastructure" expanded="True">
+                <Node name="Persistence" expanded="True" selected="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Host.Todos.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
-  <MonoDevelop.Ide.ItemProperties.Todos.Infrastructure FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Core.Todos.Domain FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Todos.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

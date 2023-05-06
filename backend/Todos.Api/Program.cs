@@ -1,3 +1,5 @@
+using Todos.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +9,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
+
+builder.Services.AddInfraServices(builder.Configuration);
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 

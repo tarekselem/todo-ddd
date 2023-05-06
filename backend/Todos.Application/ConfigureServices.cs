@@ -1,20 +1,15 @@
 ﻿namespace Todos.Infrastructure;
 
 using System.Reflection;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Todos.Application.Managers;
 
-
-public static class ConfigureInfraServices
+public static class ConfigureApplicationServices
 {
-    public static IServiceCollection AddInfraServices(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
-        var dbPath = configuration.GetConnectionString("AppDatabase");
-
-        //services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
-        services.AddScoped<Application.ITodosRepository, Repositories.TodosRepository>();
+     
+        services.AddScoped<ITodosManager, TodosManager>();
 
         return services;
     }

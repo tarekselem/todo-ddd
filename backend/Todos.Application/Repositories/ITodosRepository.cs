@@ -2,9 +2,9 @@
 
 namespace Todos.Application;
 
-public interface ITodoRepository
+public interface ITodosRepository
 {
-    IEnumerable<Todo> GetAll();
+    ICollection<Todo> GetAll();
     Todo Find(Guid id);
     Todo Remove(string key);
     void Add(Todo item);

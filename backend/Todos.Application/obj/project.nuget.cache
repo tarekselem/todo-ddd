@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "r3fF8GucOlss4BVXrld84oxz0PPS7/V3Ww2ikz8HU/Gzwvt3OCmGFFjNi+YymHqHN5xoV2BmkaeLVBE1WVexyw==",
+  "dgSpecHash": "Wg78ValLOL1mwTiLxbQ6KlJyBAd7ZL2YHCKpFbeBteYRiTxWpcy9+HpRmkGLmyaevtL2qd1p6phv3ZXge3xHdg==",
   "success": true,
   "projectFilePath": "/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Application/Todos.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/tarekselem/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/tarekselem/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/Users/tarekselem/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/7.0.0/microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,26 +1,21 @@
 ﻿namespace Todos.Infrastructure;
 
-using Microsoft.AspNetCore.Builder;
+using System.Reflection;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-public class ConfigurationsService
+
+public static class ConfigureInfraServices
 {
-    private readonly IServiceCollection _services;
-
-    public ConfigurationsService(IServiceCollection services)
+    public static IServiceCollection AddInfraServices(this IServiceCollection services, IConfiguration configuration)
     {
-        this._services = services;
-    }
+        var dbPath = configuration.GetConnectionString("AppDatabase");
 
-    public void ConfigureServices( WebApplicationBuilder builder)
-    {
-        //Setup database connection
-        //builder
-        //    .Services
-        //    .AddDbContext<UniversityDbContext>(opt => opt.UseSqlServer(ConnectionString));
+        //services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-        // DI - Register repository
-        this._services.AddTransient<string, string>();
+        services.AddScoped<Application.ITodosRepository, Repositories.TodosRepository>();
+
+        return services;
     }
 }
 

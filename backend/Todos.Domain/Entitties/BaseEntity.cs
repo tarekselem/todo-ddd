@@ -3,8 +3,9 @@ namespace Todos.Domain.Entitties
 {
 	public class BaseEntity
 	{
-        public Guid Id { get; set; }
-        // add createdon, updatedon
+        public virtual Guid Id { get; set; }
+
+        //TODO: add createdon, updatedon
     }
 }
 
