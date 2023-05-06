@@ -107,6 +107,45 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Todos.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Todos.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Todos.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Todos.Application.dll": {}
+        }
+      },
+      "Todos.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Todos.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Todos.Domain.dll": {}
+        }
+      },
+      "Todos.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Todos.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Todos.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Todos.Infrastructure.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -460,12 +499,29 @@
         "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "Todos.Application/1.0.0": {
+      "type": "project",
+      "path": "../Todos.Application/Todos.Application.csproj",
+      "msbuildProject": "../Todos.Application/Todos.Application.csproj"
+    },
+    "Todos.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Todos.Domain/Todos.Domain.csproj",
+      "msbuildProject": "../Todos.Domain/Todos.Domain.csproj"
+    },
+    "Todos.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Todos.Infrastructure/Todos.Infrastructure.csproj",
+      "msbuildProject": "../Todos.Infrastructure/Todos.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.AspNetCore.OpenApi >= 7.0.5",
-      "Swashbuckle.AspNetCore >= 6.5.0"
+      "Swashbuckle.AspNetCore >= 6.5.0",
+      "Todos.Application >= 1.0.0",
+      "Todos.Infrastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -492,7 +548,14 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Application/Todos.Application.csproj": {
+              "projectPath": "/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Application/Todos.Application.csproj"
+            },
+            "/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Infrastructure/Todos.Infrastructure.csproj": {
+              "projectPath": "/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Infrastructure/Todos.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

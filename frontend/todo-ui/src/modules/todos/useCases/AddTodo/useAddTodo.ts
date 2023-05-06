@@ -13,7 +13,11 @@ const useAddTodo = (onAdd: () => void) => {
       const previousTodos = queryClient.getQueryData<Todo[]>(CACHE_KEY) || [];
 
       queryClient.setQueryData<Todo[]>(CACHE_KEY, (todos = []) => [
-        newTodo as Todo,
+        {
+          ...newTodo,
+          // Temp Id
+          id: "000-000-0000",
+        } as Todo,
         ...todos,
       ]);
 

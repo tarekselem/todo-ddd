@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "Todos.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Todos.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Todos.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Todos.Application.dll": {}
+        }
+      },
+      "Todos.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Todos.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Todos.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Todos.Application/1.0.0": {
+      "type": "project",
+      "path": "../Todos.Application/Todos.Application.csproj",
+      "msbuildProject": "../Todos.Application/Todos.Application.csproj"
+    },
+    "Todos.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Todos.Domain/Todos.Domain.csproj",
+      "msbuildProject": "../Todos.Domain/Todos.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "Todos.Application >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/tarekselem/.nuget/packages/": {}
@@ -31,7 +68,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Application/Todos.Application.csproj": {
+              "projectPath": "/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Application/Todos.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -55,6 +96,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

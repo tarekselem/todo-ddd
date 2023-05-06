@@ -19,3 +19,14 @@ public class NewTodoDTO
 
     public DateTime? DueDate;
 }
+
+
+public class UpdateTodoDTO
+{
+    public string? Description { get; set; }
+
+    public DateTime? DueDate { get; set; }
+
+    public Boolean? IsCompleted { get; set; }
+
+}

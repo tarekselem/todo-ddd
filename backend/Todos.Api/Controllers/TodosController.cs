@@ -53,7 +53,7 @@ namespace Todos.Api.Controllers
             }
         }
 
-        [HttpPatch("{id}")]
+        [HttpPatch("{id}/MarkAsCompleted")]
         public IActionResult MarkAsCompleted(Guid id)
         {
             try
