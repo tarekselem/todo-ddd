@@ -421,10 +421,7 @@
         },
         "runtime": {
           "bin/placeholder/Todos.Infrastructure.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },

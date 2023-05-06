@@ -1,6 +1,7 @@
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Core.config
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/appsettings.Development.json
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/appsettings.json
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/db.json
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Api
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Api.deps.json
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Api.runtimeconfig.json

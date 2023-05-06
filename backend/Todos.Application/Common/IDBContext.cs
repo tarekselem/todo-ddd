@@ -5,7 +5,7 @@ namespace Todos.Application.Common
 {
 	public interface IDBContext
 	{
-		HashSet<Todo> Todos { get; set; }
+        IEnumerable<Todo> Todos { get; set; }
 
 		Task<bool> SaveChangesAsync();
 	}

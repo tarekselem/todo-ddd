@@ -1,14 +1,23 @@
 ﻿using System;
 using Todos.Application;
-using Todos.Domain.Entitties;
+using Todos.Application.Common;
+using Todos.Application.Models;
+
 
 namespace Todos.Infrastructure.Repositories
 {
 	public class TodosRepository: ITodosRepository
     {
-		public TodosRepository()
+        private readonly IDBContext _dBContext;
+		public TodosRepository(IDBContext dBContext)
 		{
+            this._dBContext = dBContext;
 		}
+
+        public IEnumerable<Todo> GetAll()
+        {
+            return this._dBContext.Todos;
+        }
 
         public void Add(Todo item)
         {
@@ -16,11 +25,6 @@ namespace Todos.Infrastructure.Repositories
         }
 
         public Todo Find(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICollection<Todo> GetAll()
         {
             throw new NotImplementedException();
         }

@@ -1,10 +1,11 @@
-﻿using Todos.Domain.Entitties;
+﻿
+using Todos.Application.Models;
 
 namespace Todos.Application;
 
 public interface ITodosRepository
 {
-    ICollection<Todo> GetAll();
+    IEnumerable<Todo> GetAll();
     Todo Find(Guid id);
     Todo Remove(string key);
     void Add(Todo item);

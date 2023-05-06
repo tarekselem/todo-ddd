@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MWD8glTLA7nf6BsmHj/w1FtdkyXkplxkDeGxWeTq5XkWt1clqfWUICpSD2l4XU8XscSMs68988ciTE8/Hta9Ug==",
+  "dgSpecHash": "0We2ZhFxiHRblEw98UqDUu45AOwsbXA64wLllUgh5I9Pt6rNrz9cZiHietYhzYP7v5vj5TYoFEGAgHc5KGgQlQ==",
   "success": true,
   "projectFilePath": "/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/Todos.Api.csproj",
   "expectedPackageFiles": [

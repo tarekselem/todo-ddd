@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using Todos.Application.Managers;
+using Todos.Application.Models;
 
 namespace Todos.Api.Controllers
 {
@@ -8,26 +8,18 @@ namespace Todos.Api.Controllers
     public class TodosController : Controller
     {
         private readonly List<TodoDTO> _todosList;
+        private readonly ITodosManager _manager;
 
-        public TodosController()
+        public TodosController(ITodosManager manager)
         {
-            this._todosList = new List<TodoDTO>{
-
-            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874931"), Description="Hi test ftedfkm XYZ", DueDate= DateTime.Today},
-            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874932"), Description="Finish XYZ", DueDate= DateTime.Today, IsOverdue= true},
-            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874933"), Description="Learn ZYZ", IsCompleted=true},
-            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874934"), Description="Finish XYZ", DueDate= DateTime.Today},
-            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874935"), Description="Finish XYZ", DueDate= DateTime.Today},
-            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874936"), Description="Finish XYZ", DueDate= DateTime.Today},
-            new TodoDTO {Id = new Guid("cd5d6682-c407-41f7-b0f8-d51f28874937"), Description="Finish XYZ", DueDate= DateTime.Today},
-
-};
+            this._manager = manager;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAsync()
+        public async Task<IActionResult> GetAsync(TodoStatusEnum? statusfilter)
         {
-            return Ok(this._todosList);
+            var result = this._manager.getTodos(statusfilter);
+            return Ok(result);
         }
 
 

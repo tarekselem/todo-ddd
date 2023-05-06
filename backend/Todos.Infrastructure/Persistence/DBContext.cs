@@ -5,17 +5,18 @@ using Todos.Infrastructure.Persistence;
 
 namespace Todos.Infrastructure
 {
-	public class DBContext: IDBContext
+    public class DBContext : IDBContext
     {
-        private readonly object _dataAdapter;
+        private readonly IAdapter _dataAdapter;
 
-		public DBContext()
+		public DBContext(string connectionString)
 		{
-            this._dataAdapter = new JsonAdapter<object>("");
+            this._dataAdapter = new JsonAdapter<Todo>(connectionString);
 
         }
 
-        HashSet<Todo> IDBContext.Todos { get; set ; }
+
+        public IEnumerable<Todo> Todos { get { return (IEnumerable<Todo>)this._dataAdapter.LoadDBSet(); } set { } }
 
 
         Task<bool> IDBContext.SaveChangesAsync()
