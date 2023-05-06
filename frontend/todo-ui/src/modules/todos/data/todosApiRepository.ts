@@ -2,7 +2,7 @@ import { ApiBaseRepository } from "@core/common";
 import { TodoDTO } from "../domain/dtos";
 import { ITodosRepository } from "../application/repositories";
 import { TodoMapper, AddTodoMapper } from "../application/mappers";
-import { AddTodo, Todo } from "../application/models";
+import { AddTodo, Todo, UpdateTodo } from "../application/models";
 
 import { API_ENDPOINT } from "../Providers";
 
@@ -34,6 +34,8 @@ export class TodosApiRepository
   deleteTodo = (todoId: string) => super.delete(todoId);
 
   completeTodo(todoId: string): Promise<Todo> {
-    throw new Error("Method not implemented.");
+    return super
+      .patch<UpdateTodo>(todoId, { isCompleted: true })
+      .then((data) => this._todoMapper.singleToDomain(data));
   }
 }

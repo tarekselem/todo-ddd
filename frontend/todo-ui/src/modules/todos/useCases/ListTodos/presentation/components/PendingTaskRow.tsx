@@ -1,8 +1,9 @@
-import { Box, Flex, IconButton, Td, Tr } from "@chakra-ui/react";
-import { MdDone } from "react-icons/md";
+import { Box, Flex, Td, Tr } from "@chakra-ui/react";
 import { FaTimesCircle } from "react-icons/fa";
 import { Todo } from "@modules/todos/application/models";
 import { DeleteTodo } from "@modules/todos/useCases/DeleteTodo";
+import { CompleteTodo } from "@modules/todos/useCases/CompleteTodo";
+
 import TextCell from "./TextCell";
 
 interface Props {
@@ -13,14 +14,7 @@ export const PendingTaskRow = ({ data }: Props) => {
     <Tr>
       <Td textAlign="start" paddingX={2}>
         <Flex>
-          <IconButton
-            aria-label="Mark Completed"
-            size="xs"
-            marginX={2}
-            _hover={{ color: "green" }}
-            icon={<MdDone />}
-          />
-
+          <CompleteTodo todoId={data.id} />
           <TextCell>{data.description}</TextCell>
         </Flex>
       </Td>

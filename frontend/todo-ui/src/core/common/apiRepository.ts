@@ -31,4 +31,10 @@ export class ApiBaseRepository<TEntity> {
       .delete(`${this.endpoint}/${id}`, configs)
       .then((res) => res.data);
   }
+
+  patch<TData>(id: string, data: TData, configs?: AxiosRequestConfig) {
+    return apiClient
+      .patch<TEntity>(`${this.endpoint}/${id}`, data, configs)
+      .then((res) => res.data);
+  }
 }

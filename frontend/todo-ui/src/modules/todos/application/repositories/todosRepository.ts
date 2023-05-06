@@ -1,5 +1,4 @@
-import { AddTodo } from "../models";
-import { Todo } from "../models/todo";
+import { Todo, AddTodo } from "../models";
 
 export interface ITodosRepository {
   getTodos(filters: unknown): Promise<Todo[]>;
