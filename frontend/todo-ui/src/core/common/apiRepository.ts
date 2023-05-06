@@ -1,5 +1,5 @@
-import { apiClient } from "@core/config/apiClient";
 import { AxiosRequestConfig } from "axios";
+import { apiClient } from "@core/config/apiClient";
 
 export class ApiBaseRepository<TEntity> {
   private readonly endpoint: string;
@@ -23,6 +23,12 @@ export class ApiBaseRepository<TEntity> {
   post<TData>(data: TData, configs?: AxiosRequestConfig) {
     return apiClient
       .post<TEntity>(this.endpoint, data, configs)
+      .then((res) => res.data);
+  }
+
+  delete(id: string, configs?: AxiosRequestConfig) {
+    return apiClient
+      .delete(`${this.endpoint}/${id}`, configs)
       .then((res) => res.data);
   }
 }

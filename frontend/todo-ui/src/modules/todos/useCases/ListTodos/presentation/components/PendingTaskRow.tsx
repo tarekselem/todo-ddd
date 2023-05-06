@@ -1,7 +1,8 @@
 import { Box, Flex, IconButton, Td, Tr } from "@chakra-ui/react";
-import { MdDelete, MdDone } from "react-icons/md";
+import { MdDone } from "react-icons/md";
 import { FaTimesCircle } from "react-icons/fa";
 import { Todo } from "@modules/todos/application/models";
+import { DeleteTodo } from "@modules/todos/useCases/DeleteTodo";
 import TextCell from "./TextCell";
 
 interface Props {
@@ -32,13 +33,7 @@ export const PendingTaskRow = ({ data }: Props) => {
       </Td>
 
       <Td textAlign="center">
-        <IconButton
-          aria-label="Delete Task"
-          size="xs"
-          marginX={2}
-          _hover={{ color: "red.400" }}
-          icon={<MdDelete />}
-        />
+        <DeleteTodo todoId={data.id} />
       </Td>
     </Tr>
   );

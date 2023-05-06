@@ -4,3 +4,7 @@ type FilterOption = {
   key: string;
   value: string;
 };
+
+type TodoContext = {
+  previousTodos: Todo[];
+};

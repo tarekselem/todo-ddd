@@ -3,14 +3,10 @@ import { todosRepository } from "@modules/todos/Providers";
 import { AddTodo, Todo } from "@modules/todos/application";
 import { CACHE_KEY } from "../ListTodos/constants";
 
-type AddTodoContext = {
-  previousTodos: Todo[];
-};
-
 const useAddTodo = (onAdd: () => void) => {
   const queryClient = useQueryClient();
 
-  return useMutation<Todo, Error, AddTodo, AddTodoContext>({
+  return useMutation<Todo, Error, AddTodo, TodoContext>({
     mutationFn: todosRepository.addTodo,
 
     onMutate: (newTodo) => {

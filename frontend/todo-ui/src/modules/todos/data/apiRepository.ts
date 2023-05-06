@@ -31,11 +31,9 @@ export class TodosApiRepository
       .then((data) => this._todoMapper.singleToDomain(data));
   }
 
-  completeTodo(todoId: string): void {
-    throw new Error("Method not implemented.");
-  }
+  deleteTodo = (todoId: string) => super.delete(todoId);
 
-  deleteTodo(todoId: string): void {
+  completeTodo(todoId: string): Promise<Todo> {
     throw new Error("Method not implemented.");
   }
 }

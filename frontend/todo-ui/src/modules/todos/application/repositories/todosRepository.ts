@@ -4,6 +4,6 @@ import { Todo } from "../models/todo";
 export interface ITodosRepository {
   getTodos(filters: unknown): Promise<Todo[]>;
   addTodo(newTodo: AddTodo): Promise<Todo>;
-  completeTodo(todoId: string): void;
-  deleteTodo(todoId: string): void;
+  completeTodo(todoId: string): Promise<Todo>;
+  deleteTodo(todoId: string): Promise<void>;
 }
