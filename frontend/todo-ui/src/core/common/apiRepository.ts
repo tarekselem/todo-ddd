@@ -32,9 +32,9 @@ export class ApiBaseRepository<TEntity> {
       .then((res) => res.data);
   }
 
-  patch<TData>(id: string, data: TData, configs?: AxiosRequestConfig) {
+  patch<TData>(customUrl: string, data?: TData, configs?: AxiosRequestConfig) {
     return apiClient
-      .patch<TEntity>(`${this.endpoint}/${id}`, data, configs)
+      .patch<TEntity>(customUrl, data, configs)
       .then((res) => res.data);
   }
 }
