@@ -1,3 +1,10 @@
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.csproj.AssemblyReference.cache
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.GeneratedMSBuildEditorConfig.editorconfig
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.AssemblyInfoInputs.cache
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.AssemblyInfo.cs
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.csproj.CoreCompileInputs.cache
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.MvcApplicationPartsAssemblyInfo.cs
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.MvcApplicationPartsAssemblyInfo.cache
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Core.config
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/appsettings.Development.json
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/appsettings.json
@@ -20,13 +27,6 @@
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Application.pdb
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Infrastructure.pdb
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Domain.pdb
-/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.csproj.AssemblyReference.cache
-/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.GeneratedMSBuildEditorConfig.editorconfig
-/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.AssemblyInfoInputs.cache
-/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.AssemblyInfo.cs
-/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.csproj.CoreCompileInputs.cache
-/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.MvcApplicationPartsAssemblyInfo.cs
-/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.MvcApplicationPartsAssemblyInfo.cache
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/staticwebassets/msbuild.Todos.Api.Microsoft.AspNetCore.StaticWebAssets.props
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/staticwebassets/msbuild.build.Todos.Api.props
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.Todos.Api.props

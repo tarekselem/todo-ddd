@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Todos.Application.DTOs;
 using Todos.Application.Managers;
 using Todos.Application.Models;
 
@@ -7,7 +8,6 @@ namespace Todos.Api.Controllers
     [Route("api/[controller]")]
     public class TodosController : Controller
     {
-        private readonly List<TodoDTO> _todosList;
         private readonly ITodosManager _manager;
 
         public TodosController(ITodosManager manager)
@@ -18,7 +18,7 @@ namespace Todos.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAsync(TodoStatusEnum? statusfilter)
         {
-            var result = this._manager.getTodos(statusfilter);
+            var result = this._manager.GetTodos(statusfilter);
             return Ok(result);
         }
 
@@ -30,14 +30,8 @@ namespace Todos.Api.Controllers
             {
                 if (newTodo == null || !ModelState.IsValid) return BadRequest();
 
-                this._todosList.Add(new TodoDTO
-                {
-                    Id = Guid.NewGuid(),
-                    Description = newTodo.Description,
-                    DueDate = newTodo.DueDate
-                });
-
-                return Ok();
+                var result = this._manager.AddTodo(newTodo);
+                return Ok(result);
             }
             catch (System.Exception ex)
             {
@@ -53,10 +47,9 @@ namespace Todos.Api.Controllers
                 // TODO: move to generic filter
                 if (!ModelState.IsValid) return BadRequest();
 
-                var todoToUpdate = this._todosList.FirstOrDefault((todo) => todo.Id == id);
+                var todoToUpdate = this._manager.CompleteTodo(id);
                 if (todoToUpdate == null) return NotFound();
 
-                todoToUpdate.IsCompleted = true;
                 return Ok(todoToUpdate);
 
             }
@@ -71,11 +64,11 @@ namespace Todos.Api.Controllers
         {
             if (!ModelState.IsValid) return BadRequest();
 
-            var todoToDelete = this._todosList.FirstOrDefault((todo) => todo.Id == id);
+            var todoToDelete = this._manager.DeleteTodo(id);
+
             if (todoToDelete == null) return NotFound();
 
-            this._todosList.Remove(todoToDelete);
-            return Ok();
+            return Ok(todoToDelete);
         }
     }
 }

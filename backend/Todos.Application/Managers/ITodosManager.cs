@@ -1,13 +1,15 @@
 ﻿using System;
+using Todos.Application.DTOs;
 using Todos.Application.Models;
 
 namespace Todos.Application.Managers
 {
 	public interface ITodosManager
 	{
-        IEnumerable<Todo> getTodos(TodoStatusEnum? statusFilter);
-		void addTodo(Todo item);
-		void completeTodo(Guid id);
+        IEnumerable<TodoDTO> GetTodos(TodoStatusEnum? statusFilter);
+        TodoDTO AddTodo(NewTodoDTO item);
+        TodoDTO? CompleteTodo(Guid id);
+        TodoDTO? DeleteTodo(Guid id);
     }
 }
 

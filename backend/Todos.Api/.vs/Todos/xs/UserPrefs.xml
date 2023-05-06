@@ -1,29 +1,37 @@
 ﻿<Properties StartupConfiguration="{22A9B368-BBF6-4D1F-A148-4B0AE6640E1A}|https">
-  <MonoDevelop.Ide.Workbench ActiveDocument="../Todos.Infrastructure/Persistence/JsonAdapter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/TodosController.cs">
     <Files>
-      <File FileName="../Todos.Application/Repositories/ITodosRepository.cs" Line="12" Column="2" />
-      <File FileName="../Todos.Application/Managers/ITodosManager.cs" Line="6" Column="32" />
-      <File FileName="../Todos.Application/Managers/TodosManager.cs" Line="10" Column="47" />
-      <File FileName="Controllers/TodosController.cs" Line="22" Column="63" />
-      <File FileName="../Todos.Infrastructure/Repositories/TodosRepository.cs" Line="31" Column="39" />
-      <File FileName="../Todos.Infrastructure/Persistence/JsonAdapter.cs" Line="23" Column="66" />
+      <File FileName="Controllers/TodosController.cs" Line="21" Column="40" />
+      <File FileName="../Todos.Application/Managers/ITodosManager.cs" Line="10" Column="31" />
+      <File FileName="../Todos.Application/Managers/TodosManager.cs" Line="54" Column="10" />
+      <File FileName="../Todos.Infrastructure/Repositories/TodosRepository.cs" Line="14" Column="41" />
+      <File FileName="../Todos.Application/Repositories/ITodosRepository.cs" Line="11" Column="9" />
+      <File FileName="../Todos.Infrastructure/Persistence/DBContext.cs" Line="19" Column="81" />
+      <File FileName="../Todos.Application/Common/IDBContext.cs" Line="8" Column="13" />
+      <File FileName="../Todos.Infrastructure/Persistence/IAdapter.cs" Line="8" Column="21" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Todos" expanded="True" selected="True">
+          <Node name="Todos" expanded="True">
             <Node name="Core" expanded="True">
               <Node name="Todos.Application" expanded="True">
-                <Node name="Common" expanded="True" />
+                <Node name="DTOs" expanded="True" />
                 <Node name="Managers" expanded="True" />
                 <Node name="Models" expanded="True" />
                 <Node name="Repositories" expanded="True" />
               </Node>
             </Node>
-            <Node name="DB" expanded="True" />
             <Node name="Host" expanded="True">
               <Node name="Todos.Api" expanded="True">
-                <Node name="Controllers" expanded="True" />
+                <Node name="Controllers" expanded="True">
+                  <Node name="TodosController.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="Infra" expanded="True">
+              <Node name="Todos.Infrastructure" expanded="True">
+                <Node name="Repositories" expanded="True" />
               </Node>
             </Node>
           </Node>

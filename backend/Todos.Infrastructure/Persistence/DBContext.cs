@@ -16,13 +16,8 @@ namespace Todos.Infrastructure
         }
 
 
-        public IEnumerable<Todo> Todos { get { return (IEnumerable<Todo>)this._dataAdapter.LoadDBSet(); } set { } }
+        public List<Todo> Todos { get { return (List<Todo>)this._dataAdapter.LoadDBSet(); } set { } }
 
-
-        Task<bool> IDBContext.SaveChangesAsync()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 

@@ -6,8 +6,8 @@ namespace Todos.Application;
 public interface ITodosRepository
 {
     IEnumerable<Todo> GetAll();
-    Todo Find(Guid id);
-    Todo Remove(string key);
+    Todo? GetById(Guid id);
+    Todo? Remove(Guid id);
     void Add(Todo item);
     void Update(Todo item);
 }

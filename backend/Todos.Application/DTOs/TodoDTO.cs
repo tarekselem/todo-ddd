@@ -1,4 +1,6 @@
-namespace Todos.Api;
+using Todos.Application.Models;
+
+namespace Todos.Application.DTOs;
 
 public class TodoDTO
 {
@@ -9,6 +11,7 @@ public class TodoDTO
     public DateTime? DueDate;
 
     public Boolean IsCompleted { get; set; } = false;
+
     public Boolean IsOverdue { get; set; } = false;
 }
 

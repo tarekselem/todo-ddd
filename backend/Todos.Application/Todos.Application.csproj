@@ -12,6 +12,7 @@
     <None Remove="Common\Mappings\" />
     <None Remove="Managers\" />
     <None Remove="Models\" />
+    <None Remove="DTOs\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repositories\" />
@@ -19,6 +20,7 @@
     <Folder Include="Common\Mappings\" />
     <Folder Include="Managers\" />
     <Folder Include="Models\" />
+    <Folder Include="DTOs\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Todos.Domain\Todos.Domain.csproj" />
