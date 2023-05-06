@@ -1,3 +1,4 @@
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Core.config
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/appsettings.Development.json
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/appsettings.json
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Api
@@ -5,11 +6,19 @@
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Api.runtimeconfig.json
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Api.dll
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Api.pdb
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/AutoMapper.dll
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Microsoft.AspNetCore.OpenApi.dll
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Microsoft.OpenApi.dll
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Newtonsoft.Json.dll
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Application.dll
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Domain.dll
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Infrastructure.dll
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Application.pdb
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Infrastructure.pdb
+/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/bin/Debug/net7.0/Todos.Domain.pdb
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.csproj.AssemblyReference.cache
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.GeneratedMSBuildEditorConfig.editorconfig
 /Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Api/obj/Debug/net7.0/Todos.Api.AssemblyInfoInputs.cache
