@@ -10,7 +10,7 @@ export const TableFooter = ({ totalCount }: Props) => {
       <Text w="20%">{totalCount} item left</Text>
       <Spacer />
       <Box>
-        <FilterSelector selectionChanged={(opt) => console.log(opt)} />
+        <FilterSelector />
       </Box>
     </Flex>
   );

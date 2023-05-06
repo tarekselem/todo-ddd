@@ -5,18 +5,19 @@ import { CACHE_KEY } from "../ListTodos/constants";
 
 const useAddTodo = (onAdd: () => void) => {
   const queryClient = useQueryClient();
+  const cacheKey = CACHE_KEY();
+  const TEMP_ID = "000-000-0000";
 
   return useMutation<Todo, Error, AddTodo, TodoContext>({
     mutationFn: todosRepository.addTodo,
 
     onMutate: (newTodo) => {
-      const previousTodos = queryClient.getQueryData<Todo[]>(CACHE_KEY) || [];
+      const previousTodos = queryClient.getQueryData<Todo[]>(cacheKey) || [];
 
-      queryClient.setQueryData<Todo[]>(CACHE_KEY, (todos = []) => [
+      queryClient.setQueryData<Todo[]>(cacheKey, (todos = []) => [
         {
           ...newTodo,
-          // Temp Id
-          id: "000-000-0000",
+          id: TEMP_ID,
         } as Todo,
         ...todos,
       ]);
@@ -27,14 +28,14 @@ const useAddTodo = (onAdd: () => void) => {
     },
 
     onSuccess: (savedTodo, newTodo) => {
-      queryClient.setQueryData<Todo[]>(CACHE_KEY, (todos) =>
+      queryClient.setQueryData<Todo[]>(cacheKey, (todos) =>
         todos?.map((todo) => (todo === newTodo ? savedTodo : todo))
       );
     },
 
     onError: (error, newTodo, context) => {
       if (!context) return;
-      queryClient.setQueryData<Todo[]>(CACHE_KEY, context.previousTodos);
+      queryClient.setQueryData<Todo[]>(cacheKey, context.previousTodos);
     },
   });
 };

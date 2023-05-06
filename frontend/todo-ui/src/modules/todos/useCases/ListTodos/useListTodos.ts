@@ -12,7 +12,7 @@ const useListTodos = () => {
   );
 
   return useQuery<Todo[], Error>({
-    queryKey: CACHE_KEY,
+    queryKey: CACHE_KEY(),
     queryFn: () => todosRepository.getTodos(selectedFilter),
     staleTime: ms("24h"),
   });

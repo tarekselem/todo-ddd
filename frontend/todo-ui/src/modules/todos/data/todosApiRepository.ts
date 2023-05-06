@@ -2,6 +2,7 @@ import { ApiBaseRepository } from "@core/common";
 import { TodoDTO } from "../domain/dtos";
 import { ITodosRepository } from "../application/repositories";
 import { TodoMapper, AddTodoMapper } from "../application/mappers";
+import { FiltersOptions } from "../application/store";
 import { AddTodo, Todo, UpdateTodo } from "../application/models";
 
 export class TodosApiRepository
@@ -17,9 +18,9 @@ export class TodosApiRepository
     this._todoMapper = new TodoMapper();
   }
 
-  getTodos = (filter: unknown): Promise<Todo[]> => {
+  getTodos = (statusfilter: FiltersOptions): Promise<Todo[]> => {
     return super
-      .getAll({ params: filter })
+      .getAll({ params: { statusfilter } })
       .then((data) => this._todoMapper.collectionToDomain(data));
   };
 

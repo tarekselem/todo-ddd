@@ -7,14 +7,15 @@ import { useToast } from "@chakra-ui/toast";
 const useCompleteTodo = () => {
   const toast = useToast();
   const queryClient = useQueryClient();
+  const cacheKey = CACHE_KEY();
 
   return useMutation<Todo, Error, string, TodoContext>({
     mutationFn: todosRepository.completeTodo,
 
     onMutate: (id) => {
-      const previousTodos = queryClient.getQueryData<Todo[]>(CACHE_KEY) || [];
+      const previousTodos = queryClient.getQueryData<Todo[]>(cacheKey) || [];
 
-      queryClient.setQueryData<Todo[]>(CACHE_KEY, (todos = []) => [
+      queryClient.setQueryData<Todo[]>(cacheKey, (todos = []) => [
         ...todos.map((todo) =>
           todo.id === id ? { ...todo, isCompleted: true } : todo
         ),
@@ -35,7 +36,7 @@ const useCompleteTodo = () => {
       });
 
       if (!context) return;
-      queryClient.setQueryData<Todo[]>(CACHE_KEY, context.previousTodos);
+      queryClient.setQueryData<Todo[]>(cacheKey, context.previousTodos);
     },
   });
 };

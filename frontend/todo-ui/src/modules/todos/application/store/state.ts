@@ -1,4 +1,8 @@
-import { FiltersOptions } from "@modules/todos/domain/enums";
+export enum FiltersOptions {
+  ALL = "",
+  ACTIVE = "active",
+  COMPLETED = "completed",
+}
 
 interface QueryFiltersActions {
   setFilter: (filter: FiltersOptions) => void;

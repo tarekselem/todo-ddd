@@ -1,18 +1,19 @@
 import { useState } from "react";
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
+import {
+  FiltersOptions,
+  useQueryFiltersStore,
+} from "@modules/todos/application";
 import { DEFAULT_FILTER_OPTION, FILTER_OPTIONS } from "../../constants";
 
-interface Props {
-  selectionChanged: (selectedOption: FilterOption) => void;
-}
-
-const FilterSelector = ({ selectionChanged }: Props) => {
+const FilterSelector = () => {
   const [selectedOption, setSelectedOption] = useState(DEFAULT_FILTER_OPTION);
+  const setFilter = useQueryFiltersStore((store) => store.setFilter);
 
   const handleSelection = (selectedOption: FilterOption) => {
     setSelectedOption(selectedOption);
-    selectionChanged(selectedOption);
+    setFilter(selectedOption.key as FiltersOptions);
   };
 
   return (

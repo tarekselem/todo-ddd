@@ -5,9 +5,3 @@ export enum DueDateOptions {
   NEXT_WEEK = "next-week",
   NEXT_MONTH = "next-month",
 }
-
-export enum FiltersOptions {
-  ALL = "",
-  ACTIVE = "active",
-  COMPLETED = "completed",
-}
