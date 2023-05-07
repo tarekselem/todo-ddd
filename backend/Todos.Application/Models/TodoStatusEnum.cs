@@ -1,7 +1,6 @@
-﻿using System;
-namespace Todos.Application.Models
+﻿namespace Todos.Application.Models
 {
-	public enum TodoStatusEnum
+    public enum TodoStatusEnum
     {
         Active,
         completed,

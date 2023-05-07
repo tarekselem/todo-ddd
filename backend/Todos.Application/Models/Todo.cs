@@ -1,9 +1,8 @@
-﻿using System;
-using Entities = Todos.Domain.Entitties;
+﻿
 
 namespace Todos.Application.Models
 {
-	public class Todo
+    public class Todo
     {
         public Guid Id { get; set; }
 

@@ -1,8 +1,7 @@
-﻿using Todos.Domain.Entitties;
-
+﻿
 namespace Todos.Domain.Entitties;
 
-public class Todo: BaseEntity
+public class Todo : BaseEntity
 {
     public string Description { get; set; } = "";
 

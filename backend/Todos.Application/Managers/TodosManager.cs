@@ -1,25 +1,24 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using Todos.Application.DTOs;
 using Todos.Application.Models;
 
 
 namespace Todos.Application.Managers
 {
-	public class TodosManager: ITodosManager
+    public class TodosManager : ITodosManager
     {
         private readonly ITodosRepository _repository;
         private readonly IMapper _mapper;
 
-		public TodosManager(ITodosRepository todosRepository, IMapper mapper)
-		{
+        public TodosManager(ITodosRepository todosRepository, IMapper mapper)
+        {
             this._repository = todosRepository;
             this._mapper = mapper;
-		}
+        }
 
         public IEnumerable<TodoDto> GetTodos(TodoStatusEnum? statusFilter)
         {
-            if(statusFilter == TodoStatusEnum.completed)
+            if (statusFilter == TodoStatusEnum.completed)
             {
                 return (IEnumerable<TodoDto>)this._repository.GetAll().Where(todo => todo.IsCompleted);
             }

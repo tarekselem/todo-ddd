@@ -1,24 +1,22 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using Todos.Application;
 using Todos.Application.Common;
-using Todos.Application.DTOs;
 using Todos.Application.Models;
 using Entities = Todos.Domain.Entitties;
 
 
 namespace Todos.Infrastructure.Repositories
 {
-	public class TodosRepository: ITodosRepository
+    public class TodosRepository : ITodosRepository
     {
         private readonly IDBContext _dBContext;
         private readonly IMapper _mapper;
 
         public TodosRepository(IDBContext dBContext, IMapper mapper)
-		{
+        {
             this._dBContext = dBContext;
             this._mapper = mapper;
-		}
+        }
 
 
         public IEnumerable<Todo> GetAll()
@@ -44,7 +42,7 @@ namespace Todos.Infrastructure.Repositories
 
             if (itemToDelete == null) return null;
 
-             this._dBContext.Todos.Remove(itemToDelete);
+            this._dBContext.Todos.Remove(itemToDelete);
 
             return this._mapper.Map<Todo>(itemToDelete);
         }

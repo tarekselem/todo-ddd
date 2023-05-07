@@ -1,5 +1,4 @@
-﻿using System;
-using Todos.Application.Common;
+﻿using Todos.Application.Common;
 using Todos.Domain.Entitties;
 using Todos.Infrastructure.Persistence;
 
@@ -9,8 +8,8 @@ namespace Todos.Infrastructure
     {
         private readonly IAdapter<Todo> _dataAdapter;
 
-		public DBContext(string connectionString)
-		{
+        public DBContext(string connectionString)
+        {
             this._dataAdapter = new JsonAdapter<Todo>(connectionString);
 
         }

@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 
 namespace Todos.Infrastructure.Persistence
 {
-	public class JsonAdapter<TEntity>: IAdapter<TEntity>
+    public class JsonAdapter<TEntity> : IAdapter<TEntity>
     {
-		private readonly string _filePath;
+        private readonly string _filePath;
 
         public JsonAdapter(string filePath)
-		{
-			this._filePath = filePath;
-		}
+        {
+            this._filePath = filePath;
+        }
 
         public List<TEntity> LoadDBSet()
         {
