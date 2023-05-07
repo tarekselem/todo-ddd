@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Todos.Infrastructure.Persistence
 {
-	public class JsonAdapter<TEntity>: IAdapter
+	public class JsonAdapter<TEntity>: IAdapter<TEntity>
     {
 		private readonly string _filePath;
 
@@ -14,12 +14,12 @@ namespace Todos.Infrastructure.Persistence
 			this._filePath = filePath;
 		}
 
-        public IEnumerable LoadDBSet()
+        public List<TEntity> LoadDBSet()
         {
             using (StreamReader reader = new StreamReader(this._filePath))
             {
                 var jsonData = reader.ReadToEnd();
-                return JsonConvert.DeserializeObject<IEnumerable<TEntity>>(jsonData);
+                return JsonConvert.DeserializeObject<List<TEntity>>(jsonData);
             }
         }
 

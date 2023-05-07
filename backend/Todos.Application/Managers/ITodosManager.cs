@@ -6,10 +6,10 @@ namespace Todos.Application.Managers
 {
 	public interface ITodosManager
 	{
-        IEnumerable<TodoDTO> GetTodos(TodoStatusEnum? statusFilter);
-        TodoDTO AddTodo(NewTodoDTO item);
-        TodoDTO? CompleteTodo(Guid id);
-        TodoDTO? DeleteTodo(Guid id);
+        IEnumerable<TodoDto> GetTodos(TodoStatusEnum? statusFilter);
+        TodoDto AddTodo(NewTodoDto item);
+        TodoDto? CompleteTodo(Guid id);
+        TodoDto? DeleteTodo(Guid id);
     }
 }
 

@@ -3,9 +3,9 @@ using System.Collections;
 
 namespace Todos.Infrastructure.Persistence
 {
-	public interface IAdapter
+	public interface IAdapter<TEntity>
 	{
-        IEnumerable LoadDBSet();
+        List<TEntity> LoadDBSet();
 
     }
 }

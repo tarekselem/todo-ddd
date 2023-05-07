@@ -1,13 +1,13 @@
 ﻿using System;
 using Todos.Application.Common;
-using Todos.Application.Models;
+using Todos.Domain.Entitties;
 using Todos.Infrastructure.Persistence;
 
 namespace Todos.Infrastructure
 {
     public class DBContext : IDBContext
     {
-        private readonly IAdapter _dataAdapter;
+        private readonly IAdapter<Todo> _dataAdapter;
 
 		public DBContext(string connectionString)
 		{
@@ -16,7 +16,7 @@ namespace Todos.Infrastructure
         }
 
 
-        public List<Todo> Todos { get { return (List<Todo>)this._dataAdapter.LoadDBSet(); } set { } }
+        public List<Todo> Todos { get { return this._dataAdapter.LoadDBSet(); } set { } }
 
     }
 }

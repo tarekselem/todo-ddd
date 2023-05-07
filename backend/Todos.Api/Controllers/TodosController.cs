@@ -24,7 +24,7 @@ namespace Todos.Api.Controllers
 
 
         [HttpPost]
-        public IActionResult Post([FromBody] NewTodoDTO newTodo)
+        public IActionResult Post([FromBody] NewTodoDto newTodo)
         {
             try
             {

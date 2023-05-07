@@ -1,15 +1,12 @@
 ﻿using System;
+using Entities = Todos.Domain.Entitties;
+
 namespace Todos.Application.Models
 {
-	public class Todo
-	{
-        public Guid Id { get; set; }
+	public class Todo: Entities.Todo
+    {
+        public bool IsOverdue { get { return this.DueDate > DateTime.Today; } }
 
-        public string Description { get; set; } = "";
-
-        public DateTime? DueDate { get; set; }
-         
-        public Boolean IsCompleted { get; set; }
     }
 }
 

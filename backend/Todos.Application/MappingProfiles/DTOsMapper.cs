@@ -6,9 +6,9 @@ using Todos.Application.Models;
 
 namespace Todos.Application.MappingProfil
 {
-	public class TodoMapper: Profile
+	public class DtosMapper: Profile
     {
-        public TodoMapper()
+        public DtosMapper()
 		{
             CreateMap<Todo, TodoDto>();
         }

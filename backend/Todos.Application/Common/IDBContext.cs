@@ -1,5 +1,5 @@
 ﻿using System;
-using Todos.Application.Models;
+using Todos.Domain.Entitties;
 
 namespace Todos.Application.Common
 {

@@ -1,32 +1,37 @@
 ﻿using System;
-using Todos.Application.Models;
+using AutoMapper;
 using Todos.Application.DTOs;
+using Todos.Application.Models;
+
 
 namespace Todos.Application.Managers
 {
 	public class TodosManager: ITodosManager
     {
         private readonly ITodosRepository _todosRepository;
+        private readonly IMapper _mapper;
 
-		public TodosManager(ITodosRepository todosRepository)
+		public TodosManager(ITodosRepository todosRepository, IMapper mapper)
 		{
             this._todosRepository = todosRepository;
+            this._mapper = mapper;
 		}
 
-        public IEnumerable<TodoDTO> GetTodos(TodoStatusEnum? statusFilter)
+        public IEnumerable<TodoDto> GetTodos(TodoStatusEnum? statusFilter)
         {
             if(statusFilter == TodoStatusEnum.completed)
             {
-                return (IEnumerable<TodoDTO>)this._todosRepository.GetAll().Where(todo => todo.IsCompleted);
+                return (IEnumerable<TodoDto>)this._todosRepository.GetAll().Where(todo => todo.IsCompleted);
             }else if (statusFilter == TodoStatusEnum.Active)
             {
-                return (IEnumerable<TodoDTO>)this._todosRepository.GetAll().Where(todo => !todo.IsCompleted);
+                return (IEnumerable<TodoDto>)this._todosRepository.GetAll().Where(todo => !todo.IsCompleted);
             }
 
-            return (IEnumerable<TodoDTO>)this._todosRepository.GetAll();
+            var result = this._todosRepository.GetAll();
+            return this._mapper.Map<IEnumerable<TodoDto>>(result);
         }
 
-        public TodoDTO AddTodo(NewTodoDTO item)
+        public TodoDto AddTodo(NewTodoDto item)
         {
             var newTodo = new Todo
             {
@@ -37,26 +42,25 @@ namespace Todos.Application.Managers
             };
 
             this._todosRepository.Add(newTodo);
-            return (TodoDTO)newTodo;
+            return this._mapper.Map<TodoDto>(newTodo);
         }
 
-        public TodoDTO? CompleteTodo(Guid id)
+        public TodoDto? CompleteTodo(Guid id)
         {
             var todoToUpdate = this._todosRepository.GetById(id);
 
             if (todoToUpdate == null) return null;
 
             todoToUpdate.IsCompleted = true;
-            return (TodoDTO)todoToUpdate;
+            return this._mapper.Map<TodoDto>(todoToUpdate);
         }
 
-        public TodoDTO? DeleteTodo(Guid id)
+        public TodoDto? DeleteTodo(Guid id)
         {
             var todoToDelete = this._todosRepository.Remove(id);
 
             if (todoToDelete == null) return null;
-
-            return (TodoDTO)todoToDelete;
+            return this._mapper.Map<TodoDto>(todoToDelete);
         }
 
     }
