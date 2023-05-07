@@ -20,7 +20,7 @@ namespace Todos.Infrastructure.Repositories
 
         public IEnumerable<Todo> GetAll()
         {
-            var result = this._dBContext.Todos;
+            var result = this._dBContext.Todos.OrderBy(x => x.DueDate);
             return this._mapper.Map<List<Todo>>(result);
         }
 
