@@ -3,7 +3,7 @@
 
 namespace Todos.Infrastructure.Persistence
 {
-    public class JsonAdapter<TEntity> : IAdapter<TEntity>
+    public class JsonAdapter<TEntity> : IAdapter<TEntity> where TEntity : class
     {
         private readonly string _filePath;
 
