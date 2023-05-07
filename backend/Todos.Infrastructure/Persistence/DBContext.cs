@@ -11,12 +11,11 @@ namespace Todos.Infrastructure
         public DBContext(string connectionString)
         {
             this._dataAdapter = new JsonAdapter<Todo>(connectionString);
-
+            this._dataSet = this._dataAdapter.LoadDBSet();
         }
 
-
-        public List<Todo> Todos { get { return this._dataAdapter.LoadDBSet(); } set { } }
-
+        private readonly List<Todo> _dataSet;
+        public List<Todo> Todos { get => this._dataSet; }
     }
 }
 

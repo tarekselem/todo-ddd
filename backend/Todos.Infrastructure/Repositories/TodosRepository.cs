@@ -18,7 +18,6 @@ namespace Todos.Infrastructure.Repositories
             this._mapper = mapper;
         }
 
-
         public IEnumerable<Todo> GetAll()
         {
             var result = this._dBContext.Todos;
@@ -27,7 +26,8 @@ namespace Todos.Infrastructure.Repositories
 
         public void Add(Todo item)
         {
-            this._dBContext.Todos.Add(this._mapper.Map<Entities.Todo>(item));
+            var itemToAdd = this._mapper.Map<Entities.Todo>(item);
+            this._dBContext.Todos.Add(itemToAdd);
         }
 
         public Todo? GetById(Guid id)
