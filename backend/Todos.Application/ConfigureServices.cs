@@ -13,8 +13,8 @@ public static class ConfigureApplicationServices
     {
 
         var mapper = new MapperConfiguration(cfg => {
-            cfg.AddProfile<DtosMapper>();
             cfg.AddProfile<EntitiesMapper>();
+            cfg.AddProfile<DtosMapper>();
         }).CreateMapper();
 
         services.AddSingleton(mapper); 

@@ -1,6 +1,6 @@
 ﻿using System;
 using AutoMapper;
-using Entities = Todos.Application.Models;
+using Entities = Todos.Domain.Entitties;
 using Models = Todos.Application.Models;
 
 namespace Todos.Application.MappingProfiles

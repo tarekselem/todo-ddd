@@ -414,8 +414,7 @@
           "Microsoft.Extensions.Configuration.Json": "7.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
           "Newtonsoft.Json": "13.0.3",
-          "Todos.Application": "1.0.0",
-          "Todos.Domain": "1.0.0"
+          "Todos.Application": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Todos.Infrastructure.dll": {}
