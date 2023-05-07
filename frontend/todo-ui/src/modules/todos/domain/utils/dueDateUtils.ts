@@ -1,23 +1,27 @@
 import { DueDateOptions } from "../enums";
 
-export const getDueDate = (dueOption: DueDateOptions): Date | undefined => {
-  const CURRENT_DATE = new Date();
-  switch (dueOption) {
+export const getDueDate = (dueDateOption: DueDateOptions): string => {
+  switch (dueDateOption) {
     case DueDateOptions.TODAY:
-      return CURRENT_DATE;
+      return addDaysToCurrentDate(0).toUTCString();
 
     case DueDateOptions.TOMORROW:
-      return new Date(CURRENT_DATE.getDate() + 1);
-
+      return addDaysToCurrentDate(1).toUTCString();
     case DueDateOptions.NEXT_WEEK:
-      return new Date(CURRENT_DATE.getDate() + 6);
+      return addDaysToCurrentDate(7).toUTCString();
 
     case DueDateOptions.NEXT_MONTH:
-      return new Date(CURRENT_DATE.getDate() + 29);
+      return addDaysToCurrentDate(30).toUTCString();
 
     default:
-      return undefined;
+      return "";
   }
+};
+
+const addDaysToCurrentDate = (days: number): Date => {
+  const currentDate = new Date();
+  currentDate.setDate(currentDate.getDate() + days);
+  return currentDate;
 };
 
 export const DEFAULT_OPTION: Readonly<DueDateOption> = {

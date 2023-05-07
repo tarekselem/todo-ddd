@@ -1,5 +1,5 @@
 export interface UpdateTodoDto {
   description?: string;
-  dueTime?: string;
+  dueDate?: string;
   isCompleted?: boolean;
 }

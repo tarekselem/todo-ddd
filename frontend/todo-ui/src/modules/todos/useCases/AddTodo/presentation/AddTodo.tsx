@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   Box,
   Flex,
@@ -7,10 +7,12 @@ import {
   InputLeftElement,
 } from "@chakra-ui/react";
 import { FcTodoList } from "react-icons/fc";
+import { DueDateOptions } from "@modules/todos/domain/enums";
 import DueDateSelector from "./components/DueDateSelector";
 import useAddTodo from "../useAddTodo";
 
 export const AddTodo = () => {
+  const [selectedDueDate, setSelectedDueDate] = useState<DueDateOptions>();
   const descriptionRef = useRef<HTMLInputElement>(null);
 
   const addTodo = useAddTodo(() => {
@@ -21,7 +23,10 @@ export const AddTodo = () => {
     evt.preventDefault();
 
     if (descriptionRef.current) {
-      addTodo.mutate({ description: descriptionRef.current.value });
+      addTodo.mutate({
+        description: descriptionRef.current.value,
+        dueDateOption: selectedDueDate!,
+      });
     }
   };
 
@@ -43,7 +48,9 @@ export const AddTodo = () => {
 
           <Box minWidth="20%">
             <DueDateSelector
-              selectionChanged={(selectedItem) => console.log(selectedItem)}
+              selectionChanged={(selectedItem) =>
+                setSelectedDueDate(selectedItem.key)
+              }
             />
           </Box>
         </Flex>

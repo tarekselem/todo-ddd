@@ -21,7 +21,7 @@ export const PendingTaskRow = ({ data }: Props) => {
 
       <Td textAlign="center">
         <Flex gap={2} alignItems="center">
-          <TextCell>{data.dueDateTime}</TextCell>
+          <TextCell>{data.dueDate}</TextCell>
           <Box color="red.400">{data.isOverdue && <FaTimesCircle />}</Box>
         </Flex>
       </Td>

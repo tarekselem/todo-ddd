@@ -17,8 +17,8 @@ export const CompeletedTaskRow = ({ data }: Props) => {
       </Td>
 
       <Td textAlign="center">
-        <Box marginRight={8}>
-          <StrickedTextCell>{data.dueDateTime}</StrickedTextCell>
+        <Box marginRight={10}>
+          <StrickedTextCell>{data.dueDate}</StrickedTextCell>
         </Box>
       </Td>
 

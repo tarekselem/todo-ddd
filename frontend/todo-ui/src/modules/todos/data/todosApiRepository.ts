@@ -19,8 +19,9 @@ export class TodosApiRepository
   }
 
   getTodos = (statusfilter: FiltersOptions): Promise<Todo[]> => {
+    const params = statusfilter === FiltersOptions.ALL ? {} : { statusfilter };
     return super
-      .getAll({ params: { statusfilter } })
+      .getAll({ params })
       .then((data) => this._todoMapper.collectionToDomain(data));
   };
 
