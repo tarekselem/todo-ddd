@@ -4,6 +4,7 @@ using Todos.Application;
 using Todos.Application.Common;
 using Todos.Application.DTOs;
 using Todos.Application.Models;
+using Entities = Todos.Domain.Entitties;
 
 
 namespace Todos.Infrastructure.Repositories
@@ -23,12 +24,12 @@ namespace Todos.Infrastructure.Repositories
         public IEnumerable<Todo> GetAll()
         {
             var result = this._dBContext.Todos;
-            return this._mapper.Map<IEnumerable<Todo>>(result);
+            return this._mapper.Map<List<Todo>>(result);
         }
 
         public void Add(Todo item)
         {
-            this._dBContext.Todos.Add(item);
+            this._dBContext.Todos.Add(this._mapper.Map<Entities.Todo>(item));
         }
 
         public Todo? GetById(Guid id)

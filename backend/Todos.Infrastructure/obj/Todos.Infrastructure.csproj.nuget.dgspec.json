@@ -148,6 +148,9 @@
             "projectReferences": {
               "/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Application/Todos.Application.csproj": {
                 "projectPath": "/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Application/Todos.Application.csproj"
+              },
+              "/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Domain/Todos.Domain.csproj": {
+                "projectPath": "/Volumes/Data/Source Code/Git Repos/todo-ddd/backend/Todos.Domain/Todos.Domain.csproj"
               }
             }
           }

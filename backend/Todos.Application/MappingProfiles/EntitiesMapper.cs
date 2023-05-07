@@ -9,7 +9,7 @@ namespace Todos.Application.MappingProfiles
     {
 		public EntitiesMapper()
 		{
-            CreateMap<Entities.Todo, Models.Todo>();
+            CreateMap<Entities.Todo, Models.Todo>().ForMember(opt=> opt.IsOverdue, conf=>conf.MapFrom(x =>x.DueDate > DateTime.Today));
         }
 	}
 }

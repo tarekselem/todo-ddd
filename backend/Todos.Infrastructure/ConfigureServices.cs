@@ -14,15 +14,10 @@ public static class ConfigureInfraServices
 {
     public static IServiceCollection AddInfraServices(this IServiceCollection services, IConfiguration configuration)
     {
-        var mapperConfiguration = new MapperConfiguration(cfg => {
-            cfg.AddProfile<EntitiesMapper>();
-        });
-
         var dbPath = configuration.GetConnectionString("AppDatabasePath");
-
         services.AddSingleton<IDBContext, DBContext>(x=> new DBContext(dbPath));
-        services.AddScoped<ITodosRepository, TodosRepository>();
 
+        services.AddScoped<ITodosRepository, TodosRepository>();
         return services;
     }
 }

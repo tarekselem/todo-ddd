@@ -1,3 +1,4 @@
+using AutoMapper;
 using Todos.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,8 +11,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
 
-builder.Services.AddInfraServices(builder.Configuration);
 builder.Services.AddApplicationServices();
+builder.Services.AddInfraServices(builder.Configuration);
 
 var app = builder.Build();
 
