@@ -2,7 +2,7 @@ using Todos.Application.Models;
 
 namespace Todos.Application.DTOs;
 
-public class TodoDTO
+public class TodoDto
 {
     public Guid Id { get; set; }
 
@@ -16,7 +16,7 @@ public class TodoDTO
 }
 
 
-public class NewTodoDTO
+public class NewTodoDto
 {
     public string Description { get; set; } = "";
 
@@ -24,7 +24,7 @@ public class NewTodoDTO
 }
 
 
-public class UpdateTodoDTO
+public class UpdateTodoDto
 {
     public string? Description { get; set; }
 
