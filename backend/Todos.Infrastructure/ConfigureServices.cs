@@ -12,9 +12,11 @@ public static class ConfigureInfraServices
     public static IServiceCollection AddInfraServices(this IServiceCollection services, IConfiguration configuration)
     {
         var dbPath = configuration.GetConnectionString("AppDatabasePath");
-        services.AddSingleton<IDBContext, DBContext>(x => new DBContext(dbPath));
+        ArgumentNullException.ThrowIfNullOrEmpty(dbPath);
 
+        services.AddSingleton<IDBContext, DBContext>(x => new DBContext(dbPath));
         services.AddScoped<ITodosRepository, TodosRepository>();
+
         return services;
     }
 }

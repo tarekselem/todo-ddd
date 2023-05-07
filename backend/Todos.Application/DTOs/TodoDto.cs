@@ -7,7 +7,7 @@ public class TodoDto
 {
     public Guid Id { get; set; }
 
-    public string Description { get; set; }
+    public string Description { get; set; } = string.Empty;
 
     public DateTime? DueDate { get; set; }
 
@@ -21,7 +21,7 @@ public class NewTodoDto
 {
     [Required]
     [MinLength(10)]
-    public string Description { get; set; }
+    public string Description { get; set; } = string.Empty;
 
     public DateTime? DueDate { get; set; }
 }
@@ -31,7 +31,7 @@ public class UpdateTodoDto
 {
     [Required]
     [MinLength(10)]
-    public string Description { get; set; }
+    public string Description { get; set; } = string.Empty;
 
     public DateTime? DueDate { get; set; }
 

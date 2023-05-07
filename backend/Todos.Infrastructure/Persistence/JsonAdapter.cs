@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json;
 
 
 namespace Todos.Infrastructure.Persistence
@@ -14,13 +14,14 @@ namespace Todos.Infrastructure.Persistence
 
         public List<TEntity> LoadDBSet()
         {
-            using (StreamReader reader = new StreamReader(this._filePath))
+            using StreamReader reader = new StreamReader(this._filePath);
+            var jsonData = reader.ReadToEnd();
+            var serializeOptions = new JsonSerializerOptions
             {
-                var jsonData = reader.ReadToEnd();
-                return JsonConvert.DeserializeObject<List<TEntity>>(jsonData);
-            }
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            };
+            return JsonSerializer.Deserialize<List<TEntity>>(jsonData, serializeOptions) ?? new List<TEntity>();
         }
-
     }
 }
 

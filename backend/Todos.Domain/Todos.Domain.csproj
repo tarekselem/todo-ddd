@@ -5,11 +5,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Entitties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entitties\" />
-  </ItemGroup>
 </Project>

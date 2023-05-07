@@ -16,7 +16,7 @@ namespace Todos.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAsync(TodoStatusEnum? statusfilter)
+        public IActionResult Get(TodoStatusEnum? statusfilter)
         {
             var result = this._manager.GetTodos(statusfilter);
             return Ok(result);
@@ -26,37 +26,24 @@ namespace Todos.Api.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] NewTodoDto newTodo)
         {
-            try
-            {
-                if (newTodo == null || !ModelState.IsValid) return BadRequest();
+            if (newTodo == null || !ModelState.IsValid) return BadRequest();
 
-                var result = this._manager.AddTodo(newTodo);
-                return Ok(result);
-            }
-            catch (System.Exception ex)
-            {
-                return StatusCode(500, ex.Message);
-            }
+            var result = this._manager.AddTodo(newTodo);
+            return Ok(result);
+
         }
 
         [HttpPatch("{id}/MarkAsCompleted")]
         public IActionResult MarkAsCompleted(Guid id)
         {
-            try
-            {
-                // TODO: move to generic filter
-                if (!ModelState.IsValid) return BadRequest();
 
-                var todoToUpdate = this._manager.CompleteTodo(id);
-                if (todoToUpdate == null) return NotFound();
+            if (!ModelState.IsValid) return BadRequest();
 
-                return Ok(todoToUpdate);
+            var todoToUpdate = this._manager.CompleteTodo(id);
+            if (todoToUpdate == null) return NotFound();
 
-            }
-            catch (System.Exception ex)
-            {
-                return StatusCode(500, ex.Message);
-            }
+            return Ok(todoToUpdate);
+
         }
 
         [HttpDelete("{id}")]
