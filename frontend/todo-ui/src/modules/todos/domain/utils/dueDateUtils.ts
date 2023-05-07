@@ -3,15 +3,15 @@ import { DueDateOptions } from "../enums";
 export const getDueDate = (dueDateOption: DueDateOptions): string => {
   switch (dueDateOption) {
     case DueDateOptions.TODAY:
-      return addDaysToCurrentDate(0).toUTCString();
+      return addDaysToCurrentDate(0).toISOString();
 
     case DueDateOptions.TOMORROW:
-      return addDaysToCurrentDate(1).toUTCString();
+      return addDaysToCurrentDate(1).toISOString();
     case DueDateOptions.NEXT_WEEK:
-      return addDaysToCurrentDate(7).toUTCString();
+      return addDaysToCurrentDate(7).toISOString();
 
     case DueDateOptions.NEXT_MONTH:
-      return addDaysToCurrentDate(30).toUTCString();
+      return addDaysToCurrentDate(30).toISOString();
 
     default:
       return "";
