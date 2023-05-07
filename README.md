@@ -2,20 +2,21 @@
 
 A ToDo project written using (.NET 7 Web API, Reactjs).
 
-<img src="./preview/preview-1.png"  width="500" height="300">
+<img src="./preview/preview-1.png">
 
-<img src="./preview/preview-2.png"  width="500" height="300">
+<img src="./preview/preview-2.png">
 
-<img src="./preview/preview-3.png"  width="500" height="300">
+<img src="./preview/preview-3.png">
 
-<img src="./preview/preview-4.png"  width="500" height="300">
+<img src="./preview/preview-4.png">
 
 ## Getting Started
 
 ### Frontend:
 
-#### Prerequisites:
+It caches the fetched data and follows the optimistic mutation mechanism.
 
+#### Prerequisites:
 - Node.js v14 or higher
 - npm or yarn
 
@@ -38,6 +39,42 @@ To build the app for production, run:
 
 ### Backend:
 
+This JSON data is located in a  file which is loaded by default as initial data.
+```json
+[
+  {
+    "id": "cd5d6682-c407-41f7-b0f8-d51f28874931",
+    "description": "Finish writing report",
+    "dueDate": "2023-05-15T08:00:00Z",
+    "isCompleted": false
+  },
+  {
+    "id": "cd5d6682-c407-41f7-b0f8-d51f28874932",
+    "description": "Buy groceries",
+    "dueDate": "2023-05-12T12:00:00Z",
+    "isCompleted": false
+  },
+  {
+    "id": "cd5d6682-c407-41f7-b0f8-d51f28874933",
+    "description": "Schedule appointment",
+    "dueDate": "2023-05-20T15:30:00Z",
+    "isCompleted": false
+  },
+  {
+    "id": "cd5d6682-c407-41f7-b0f8-d51f28874934",
+    "description": "Read book",
+    "dueDate": "2023-03-11T20:00:00Z",
+    "isCompleted": false
+  },
+  {
+    "id": "cd5d6682-c407-41f7-b0f8-d51f28874935",
+    "description": "Pay bills",
+    "dueDate": "2023-04-10T17:00:00Z",
+    "isCompleted": true
+  }
+]
+
+```
 #### Prerequisites:
 
 Before you start, you will need to have the following installed on your system:
