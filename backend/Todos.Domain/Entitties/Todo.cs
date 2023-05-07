@@ -5,8 +5,8 @@ public class Todo : BaseEntity
 {
     public string Description { get; set; } = "";
 
-    public DateTime? DueDate;
+    public DateTime? DueDate { get; set; }
 
-    public bool IsCompleted { get; set; } = false;
+    public bool IsCompleted { get; set; }
 }
 

@@ -8,7 +8,7 @@ namespace Todos.Application.Models
 
         public string Description { get; set; } = "";
 
-        public DateTime? DueDate;
+        public DateTime? DueDate { get; set; }
 
         public bool IsCompleted { get; set; }
 

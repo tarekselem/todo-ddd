@@ -18,16 +18,21 @@ namespace Todos.Application.Managers
 
         public IEnumerable<TodoDto> GetTodos(TodoStatusEnum? statusFilter)
         {
+            IEnumerable<Todo> result;
+
             if (statusFilter == TodoStatusEnum.completed)
             {
-                return (IEnumerable<TodoDto>)this._repository.GetAll().Where(todo => todo.IsCompleted);
+                result = this._repository.GetAll().Where(todo => todo.IsCompleted).ToList();
             }
             else if (statusFilter == TodoStatusEnum.Active)
             {
-                return (IEnumerable<TodoDto>)this._repository.GetAll().Where(todo => !todo.IsCompleted);
+                result = this._repository.GetAll().Where(todo => !todo.IsCompleted).ToList();
+            }
+            else
+            {
+                result = this._repository.GetAll();
             }
 
-            var result = this._repository.GetAll();
             return this._mapper.Map<IEnumerable<TodoDto>>(result);
         }
 
