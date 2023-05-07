@@ -3,14 +3,14 @@ using Todos.Application.DTOs;
 using Todos.Application.Models;
 
 
-namespace Todos.Application.Managers
+namespace Todos.Application.Services
 {
-    public class TodosManager : ITodosManager
+    public class TodoService : ITodoService
     {
         private readonly ITodosRepository _repository;
         private readonly IMapper _mapper;
 
-        public TodosManager(ITodosRepository todosRepository, IMapper mapper)
+        public TodoService(ITodosRepository todosRepository, IMapper mapper)
         {
             this._repository = todosRepository;
             this._mapper = mapper;

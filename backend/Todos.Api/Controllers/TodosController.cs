@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Todos.Application.DTOs;
-using Todos.Application.Managers;
+using Todos.Application.Services;
 using Todos.Application.Models;
 
 namespace Todos.Api.Controllers
@@ -8,17 +8,17 @@ namespace Todos.Api.Controllers
     [Route("api/[controller]")]
     public class TodosController : Controller
     {
-        private readonly ITodosManager _manager;
+        private readonly ITodoService _service;
 
-        public TodosController(ITodosManager manager)
+        public TodosController(ITodoService service)
         {
-            this._manager = manager;
+            this._service = service;
         }
 
         [HttpGet]
         public IActionResult Get(TodoStatusEnum? statusfilter)
         {
-            var result = this._manager.GetTodos(statusfilter);
+            var result = this._service.GetTodos(statusfilter);
             return Ok(result);
         }
 
@@ -28,7 +28,7 @@ namespace Todos.Api.Controllers
         {
             if (newTodo == null || !ModelState.IsValid) return BadRequest();
 
-            var result = this._manager.AddTodo(newTodo);
+            var result = this._service.AddTodo(newTodo);
             return Ok(result);
 
         }
@@ -39,7 +39,7 @@ namespace Todos.Api.Controllers
 
             if (!ModelState.IsValid) return BadRequest();
 
-            var todoToUpdate = this._manager.CompleteTodo(id);
+            var todoToUpdate = this._service.CompleteTodo(id);
             if (todoToUpdate == null) return NotFound();
 
             return Ok(todoToUpdate);
@@ -51,7 +51,7 @@ namespace Todos.Api.Controllers
         {
             if (!ModelState.IsValid) return BadRequest();
 
-            var todoToDelete = this._manager.DeleteTodo(id);
+            var todoToDelete = this._service.DeleteTodo(id);
 
             if (todoToDelete == null) return NotFound();
 

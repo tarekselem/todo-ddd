@@ -1,9 +1,9 @@
 ﻿using Todos.Application.DTOs;
 using Todos.Application.Models;
 
-namespace Todos.Application.Managers
+namespace Todos.Application.Services
 {
-    public interface ITodosManager
+    public interface ITodoService
     {
         IEnumerable<TodoDto> GetTodos(TodoStatusEnum? statusFilter);
         TodoDto AddTodo(NewTodoDto item);
